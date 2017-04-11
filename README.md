@@ -6,7 +6,7 @@ Divertsy is an open source system developed by the Office Hackers at Etsy to col
 
 ## Getting Started
 
-Ensure you have a supported Android tablet (see [Tablet Setup](https://github.com/etsy/divertsy-client/wiki/2)-Tablet-Setup)) and working USB scale which is connected to the tablet (see [Scale Setup](https://github.com/etsy/divertsy-client/wiki/3)-Scale-Setup)). Then compile the Divertsy client and sideload it on to the tablet. 
+Ensure you have a supported Android tablet (see [Tablet Setup](https://github.com/etsy/divertsy-client/wiki/2%29-Tablet-Setup)) and working USB scale which is connected to the tablet (see [Scale Setup](https://github.com/etsy/divertsy-client/wiki/3%29-Scale-Setup)). Then compile the Divertsy client and sideload it on to the tablet. 
 
 When the Divertsy client runs the first time, it will ask you to set an "Office Name". This is to help you keep track of which tablet is sending you data. The tablet's "Device ID" will also be recorded in case you setup multiple tablets with the same "Office Name". Click the back arrow to return to the main Divertsy client screen.
 
