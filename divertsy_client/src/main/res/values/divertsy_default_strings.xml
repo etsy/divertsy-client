@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--/*
+     * pref_offices
+     * A default list of office/locations to select for the scale.
+     * This is a friendly name, but will get tagged into the data feed.
+     * Avoid using spaces or special characters.
+    */-->
+    <string-array name="pref_offices">
+        <item>@string/office_custom_choice</item>
+    </string-array>
+
+    <string name="default_pref_office_choice" translatable="false">OFFICE</string>
+
+
+
+</resources>

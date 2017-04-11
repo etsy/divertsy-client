@@ -1,0 +1,57 @@
+apply plugin: 'android'
+
+def getDateAsMillis() {
+    def Calendar cal = Calendar.getInstance();
+    return cal.getTimeInMillis().toString()
+}
+
+android {
+    signingConfigs {
+        release {}
+
+        try {
+            def props = new Properties()
+            props.load(new FileInputStream(rootProject.file("release.properties")))
+
+            release {
+                keyAlias props.keyAlias
+                keyPassword props.keyAliasPassword
+                storeFile new File(System.properties['user.home'] + props.keyStore)
+                storePassword props.keyStorePassword
+            }
+        } catch (IOException e){
+            logger.warn('Signing Config: ' + e.getLocalizedMessage());
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        debug {
+            buildConfigField "java.util.Date", "buildTime", "new java.util.Date(" + getDateAsMillis() + "L)"
+        }
+        release {
+            apply plugin: 'maven'
+            buildConfigField "java.util.Date", "buildTime", "new java.util.Date(" + getDateAsMillis() + "L)"
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:support-v4:24.2.0'
+    compile 'com.google.android.gms:play-services-drive:8.4.0'
+}

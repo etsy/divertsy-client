@@ -1,0 +1,28 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="@string/default_pref_office_choice"
+        android:entries="@array/pref_offices"
+        android:entryValues="@array/pref_offices"
+        android:key="office"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_offices" />
+
+    <MultiSelectListPreference
+        android:defaultValue="@array/temporary_placeholder_array"
+        android:entries="@array/temporary_placeholder_array"
+        android:entryValues="@array/temporary_placeholder_array"
+        android:key="waste_streams"
+        android:title="@string/pref_title_pick_waste_streams" />
+
+    <ListPreference
+        android:defaultValue="@string/default_language"
+        android:entries="@array/supported_languages_names"
+        android:entryValues="@array/supported_languages_values"
+        android:key="language"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_language" />
+
+</PreferenceScreen>

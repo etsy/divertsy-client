@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Divertsy</string>
+    <string name="weight" translatable="false">0.0</string>
+    <string name="btn_zero">Zero/Tare</string>
+    <string name="weight_unit_default" translatable="false"></string>
+
+    <string name="msg_set_office_name_warning_title">Configure your Divertsy App</string>
+    <string name="msg_set_office_name_warning">It looks like you have not set your Location information. Please set an Office Name and Waste Streams. The Office Name is used to tag this location.</string>
+
+    <string name="msg_perm_external_storage_title">This app needs external storage access</string>
+    <string name="msg_perm_external_storage">Please grant external storage access so this app can save your scale data. This app does not read photos or other data, simply writes the scale data in an area that can be shared.</string>
+
+    <string name="msg_manual_entry_title">Enter Manual Data</string>
+    <string name="msg_manual_entry_info">Use this to enter a scale weight</string>
+
+
+    <string name="msg_weightsent">Weight Data Recorded</string>
+    <string name="error_negative_value">Negative Value - Not Reporting</string>
+    <string name="error_reporting">Error Reporting Value</string>
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+
+    <string name="usb_select_title">Please select the USB SCALE</string>
+    <string name="usb_connect_title">Please CONNECT the Scale</string>
+
+    <!-- Strings related to Settings -->
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_header_general">General</string>
+    <string name="action_share_email">Attach to Email</string>
+    <string name="action_sync_now">Sync to Drive</string>
+
+
+    <string-array name="manual_weight_units" translatable="false">
+        <item>KG</item>
+        <item>LBS</item>
+        <item>OZ</item>
+        <item>G</item>
+        <item>TONS</item>
+    </string-array>
+
+    <string name="pref_title_language">Language (for buttons)</string>
+    <string name="default_language" translatable="false">English</string>
+    <string-array name="supported_languages_names">
+        <item>English</item>
+        <item>Spanish</item>
+        <item>German</item>
+        <item>French</item>
+    </string-array>
+
+    <string-array name="supported_languages_values" translatable="false">
+        <item></item>
+        <item>es</item>
+        <item>de</item>
+        <item>fr</item>
+    </string-array>
+
+    <string name="pref_header_location">Location</string>
+    <string name="pref_title_offices">Office Name</string>
+    <string name="office_custom_choice">Custom (set name)</string>
+
+    <string name="pref_title_pick_waste_streams">Waste Streams</string>
+
+    <string name="pref_use_beacons">Use Beacons</string>
+    <string name="pref_description_use_beacons">Will attempt to turn on Bluetooth and look for Eddystone URL location beacons.</string>
+
+    <string name="pref_tare_after_add">Enable Tare After Add</string>
+    <string name="pref_description_tare_after_add">Tare scale after pressing a waste stream button</string>
+
+    <string name="pref_use_bin_weight">Use Bin Weight</string>
+    <string name="pref_description_use_bin_weight">Subtract the value specified for bin weight from the scale reading</string>
+
+    <string name="pref_title_default_weight">Bin Weight</string>
+
+    <!-- Sync Preference strings -->
+    <string name="pref_title_sync">Sync</string>
+    <string name="pref_use_google_drive">Use Google Drive</string>
+    <string name="pref_description_use_google_drive">Save Data to Google Drive</string>
+    <string name="pref_google_drive_last_save">Last Saved Sync Time (wifi required for update)</string>
+    <string name="pref_google_drive_file_id">Linked File Identifier</string>
+    <string name="pref_disconnect_google_drive">DISCONNECT GOOGLE DRIVE</string>
+    <string name="pref_description_disconnect">Unlink the current Google Drive Account</string>
+
+    <string-array name="temporary_placeholder_array" translatable="false">
+        <item></item>
+    </string-array>
+
+</resources>

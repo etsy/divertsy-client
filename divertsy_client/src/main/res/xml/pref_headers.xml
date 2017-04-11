@@ -1,0 +1,18 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <header
+        android:fragment="com.divertsy.hid.SettingsActivity$LocationPreferenceFragment"
+        android:icon="@drawable/ic_business_black_24dp"
+        android:title="@string/pref_header_location" />
+
+    <header
+        android:fragment="com.divertsy.hid.SettingsActivity$GeneralPreferenceFragment"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/pref_header_general" />
+
+    <header
+        android:fragment="com.divertsy.hid.SettingsActivity$SyncPreferenceFragment"
+        android:icon="@drawable/ic_sync_black_24dp"
+        android:title="@string/pref_title_sync" />
+
+</preference-headers>

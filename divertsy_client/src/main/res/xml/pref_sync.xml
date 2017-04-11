@@ -1,0 +1,33 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:key="use_google_drive"
+        android:defaultValue="false"
+        android:persistent="true"
+        android:enabled="true"
+        android:summary="@string/pref_use_google_drive"
+        android:title="@string/pref_description_use_google_drive" />
+
+    <Preference
+        android:persistent="false"
+        android:selectable="true"
+        android:key="clear_drive_data"
+        android:summary="@string/pref_description_disconnect"
+        android:title="@string/pref_disconnect_google_drive" />
+
+    <Preference
+        android:persistent="false"
+        android:selectable="false"
+        android:enabled="false"
+        android:key="last_save_time"
+        android:title="@string/pref_google_drive_last_save" />
+
+    <Preference
+        android:persistent="false"
+        android:selectable="false"
+        android:enabled="false"
+        android:key="drive_id"
+        android:title="@string/pref_google_drive_file_id" />
+
+
+</PreferenceScreen>

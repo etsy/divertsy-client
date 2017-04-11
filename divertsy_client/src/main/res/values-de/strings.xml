@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Divertsy</string>
+    <string name="msg_weightsent">Gewicht geschickt</string>
+    <string name="title_activity_settings">Einstellungen</string>
+    <string name="pref_title_default_weight">Gewicht hinzufügen</string>
+    <string name="action_share_email">Anhängen an E-Mail</string>
+    <string name="action_sync_now">Synchronisierung mit Drive</string>
+    <string name="usb_connect_title">anschließen waage</string>
+    <string name="usb_select_title">wählen USB-Briefwaage</string>
+    <string name="btn_zero">Null/Tara</string>
+    <string name="error">Fehler</string>
+    <string name="ok">OK</string>
+    <string name="error_negative_value">Negative Wert -  Nicht berichten</string>
+    <string name="error_reporting">Fehlerberichterstattung</string>
+    <string name="msg_perm_external_storage_title">Diese App benötigt externen Speicherzugriff</string>
+</resources>

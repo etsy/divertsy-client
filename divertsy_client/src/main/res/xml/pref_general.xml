@@ -1,0 +1,35 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:key="tare_after_add"
+        android:summary="@string/pref_description_tare_after_add"
+        android:title="@string/pref_tare_after_add" />
+
+    <SwitchPreference
+        android:key="use_beacons"
+        android:summary="@string/pref_description_use_beacons"
+        android:title="@string/pref_use_beacons" />
+
+
+    <SwitchPreference
+        android:key="use_bin_weight"
+        android:summary="@string/pref_description_use_bin_weight"
+        android:title="@string/pref_use_bin_weight" />
+
+    <EditTextPreference
+        android:defaultValue="0"
+        android:inputType="numberDecimal"
+        android:key="add_to_scale"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_default_weight" />
+
+    <Preference
+        android:persistent="false"
+        android:selectable="false"
+        android:enabled="false"
+        android:key="device_id"
+        android:title="Device ID" />
+
+</PreferenceScreen>

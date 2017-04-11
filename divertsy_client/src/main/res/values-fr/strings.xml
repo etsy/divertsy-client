@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Divertsy</string>
+    <string name="msg_weightsent">poids envoyé</string>
+    <string name="title_activity_settings">Paramétres</string>
+    <string name="pref_title_default_weight">Ajouter du Poids</string>
+    <string name="action_share_email">Envoyer par email</string>
+    <string name="action_sync_now">Enregistrer sur Drive</string>
+    <string name="usb_connect_title">brancher la balance</string>
+    <string name="usb_select_title">choisir USB balance</string>
+    <string name="btn_zero">Zéro/Tare</string>
+    <string name="error">Erreur</string>
+    <string name="ok">D\'accord</string>
+    <string name="error_negative_value">Valeur négative - Ne pas signaler</string>
+    <string name="error_reporting">Valeur de rapport d\'erreur</string>
+    <string name="msg_perm_external_storage_title">Cette application nécessite un accès de stockage externe</string>
+</resources>

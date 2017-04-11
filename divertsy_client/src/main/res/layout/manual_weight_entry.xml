@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/manual_weight_input"
+        android:layout_height="145dp"
+        android:layout_width="200dp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:textSize="50sp"
+        android:hint="1.0"
+        android:inputType="numberDecimal" />
+
+    <Spinner
+        android:id="@+id/manual_weight_units"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/manual_weight_input"
+        android:layout_toRightOf="@+id/manual_weight_input"
+        android:layout_toEndOf="@+id/manual_weight_input"
+        android:layout_marginBottom="20dp" />
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+[{
+  "display_name": "Landfill",
+  "logged_data_name": "trash",
+  "button_color": "#FF222222",
+  "is_default": true,
+  "display_name_de": "Mülldeponie",
+  "display_name_fr": "Décharge",
+  "display_name_es": "Vertedero"
+}, {
+  "display_name": "Incinerated Waste",
+  "logged_data_name": "incinerated",
+  "button_color": "#FF222222",
+  "is_default": false
+}, {
+  "display_name": "Mixed Recycling",
+  "logged_data_name": "mixed",
+  "button_color": "#FF003DDC",
+  "is_default": false,
+  "display_name_de": "Gemischt",
+  "display_name_fr": "Mixte",
+  "display_name_es": "Reciclaje Mixto"
+}, {
+  "display_name": "Glass",
+  "logged_data_name": "glass",
+  "button_color": "#FF808080",
+  "is_default": false,
+  "display_name_de": "Glasflasche",
+  "display_name_fr": "Verre",
+  "display_name_es": "Vidrio"
+}, {
+  "display_name": "Metal/Plastic/Glass",
+  "logged_data_name": "bottles",
+  "button_color": "#FF808080",
+  "is_default": true,
+  "display_name_de": "Metalle/Glasflasche",
+  "display_name_fr": "Métal/canette",
+  "display_name_es": "Metal/Plastico/Vidrio"
+}, {
+  "display_name": "Plastic Packaging",
+  "logged_data_name": "plastic_packaging",
+  "button_color": "#FFEF4123",
+  "is_default": true,
+  "display_name_de": "Tasche",
+  "display_name_fr": "Sacs",
+  "display_name_es": "Embalaje de plástico"
+}, {
+  "display_name": "Food Waste",
+  "logged_data_name": "compost",
+  "button_color": "#FF64462B",
+  "is_default": true,
+  "display_name_de": "Kompost",
+  "display_name_fr": "Compost",
+  "display_name_es": "Compost"
+}, {
+  "display_name": "Paper/Cardboard",
+  "logged_data_name": "paper",
+  "button_color": "#FF00A100",
+  "is_default": true,
+  "display_name_de": "Papier",
+  "display_name_fr": "Papier",
+  "display_name_es": "Papel"
+}, {
+  "display_name": "eWaste",
+  "logged_data_name": "ewaste",
+  "button_color": "#FF5f2291",
+  "is_default": false,
+  "display_name_de": "Elektronisch",
+  "display_name_fr": "Électronique",
+  "display_name_es": "Electrónicos"
+}]
