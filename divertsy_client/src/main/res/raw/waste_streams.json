@@ -4,7 +4,7 @@
   "button_color": "#FF222222",
   "is_default": true,
   "display_name_de": "Mülldeponie",
-  "display_name_fr": "Décharge",
+  "display_name_fr": "Déchets",
   "display_name_es": "Vertedero"
 }, {
   "display_name": "Incinerated Waste",
