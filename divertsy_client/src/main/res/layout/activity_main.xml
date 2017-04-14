@@ -20,6 +20,7 @@
             android:id="@+id/button_row_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0.2"
             android:orientation="horizontal">
 
         </LinearLayout>
@@ -30,29 +31,41 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:layout_weight="0.15"
+            android:gravity="center_vertical|center_horizontal"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/weight"
-                android:layout_width="wrap_content"
-                android:layout_height="145dp"
-                android:gravity="center"
-                android:text="@string/weight"
-                android:textSize="100sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/weight"
+                        android:textSize="100sp" />
 
-            <TextView
-                android:id="@+id/weight_unit"
-                android:layout_width="wrap_content"
-                android:layout_height="145dp"
-                android:text="@string/weight_unit_default"
-                android:textSize="25sp" />
+                    <TextView
+                        android:id="@+id/weight_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom"
+                        android:gravity="bottom"
+                        android:layout_marginBottom="20sp"
+                        android:layout_marginRight="5sp"
+                        android:text="@string/weight_unit_default"
+                        android:textSize="25sp" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/button_row_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0.2"
             android:orientation="horizontal">
 
 
@@ -62,25 +75,42 @@
             android:id="@+id/button_row_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0.2"
             android:orientation="horizontal">
 
         </LinearLayout>
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/button_zero"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:padding="16dp"
-            android:text="@string/btn_zero"
-            android:textColor="#FFFFFF"
-            app:backgroundTint="#bcaaa4" />
+        <LinearLayout
+            android:id="@+id/extras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/button_zero"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="left"
+                android:padding="16dp"
+                android:layout_marginLeft="10px"
+                android:text="@string/btn_zero"
+                android:textColor="#FFFFFF"
+                android:background="#bcaaa4" />
+
+
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                tools:text="http://HOSTNAME/Floor/Location" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        tools:text="http://HOSTNAME/Floor/Location"/>
 </FrameLayout>

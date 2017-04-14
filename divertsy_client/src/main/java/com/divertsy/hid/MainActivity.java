@@ -168,11 +168,7 @@ public class MainActivity extends AppCompatActivity implements UsbScaleManager.C
 
         mWeightRecorder = new WeightRecorder(this);
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            if (mWeightRecorder.useBluetoothBeacons()){
-                mBLEScanner = new BLEScanner(this, REQUEST_ENABLE_BLUETOOTH, this);
-            }
-        }
+        checkIfBluetoothEnabled();
 
         setContentView(R.layout.activity_main);
         mWeight = (TextView) findViewById(R.id.weight);
@@ -234,6 +230,9 @@ public class MainActivity extends AppCompatActivity implements UsbScaleManager.C
 
     @Override
     protected void onResume() {
+        // This could have changed via settings menu
+        checkIfBluetoothEnabled();
+
         if (mBLEScanner != null) {
             mBLEScanner.onResume();
         }
@@ -244,6 +243,9 @@ public class MainActivity extends AppCompatActivity implements UsbScaleManager.C
         filter.addAction("com.divertsy.REMOTE_SCALE_WEIGHT");
         mRemoteScaleReceiver = new RemoteScaleReceiver();
         registerReceiver(mRemoteScaleReceiver, filter);
+
+        // The view might change via settings, this should refresh it
+        initView();
     }
 
     @Override
@@ -322,7 +324,13 @@ public class MainActivity extends AppCompatActivity implements UsbScaleManager.C
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == PERMISSION_REQUEST_COARSE_LOCATION) {
             if (mBLEScanner != null) {
-                mBLEScanner.onRequestPermissionsResult(requestCode, grantResults);
+                // If we get denied, we should stop trying.
+                if ((grantResults.length > 0) && (grantResults[0] == -1)){
+                    Log.e(TAG, "Coarse Permission denied. Turning off Beacon setting.");
+                    mWeightRecorder.setUseBeacons(false);
+                } else{
+                    mBLEScanner.onRequestPermissionsResult(requestCode, grantResults);
+                }
             }
         }
         if (requestCode == REQUEST_WRITE_STORAGE){
@@ -330,6 +338,13 @@ public class MainActivity extends AppCompatActivity implements UsbScaleManager.C
         }
     }
 
+    private void checkIfBluetoothEnabled(){
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            if (mWeightRecorder.useBluetoothBeacons()){
+                mBLEScanner = new BLEScanner(this, REQUEST_ENABLE_BLUETOOTH, this);
+            }
+        }
+    }
 
     private void initView() {
         setTitleBar();
@@ -361,7 +376,7 @@ public class MainActivity extends AppCompatActivity implements UsbScaleManager.C
 
             AppCompatButton button = new AppCompatButton(this);
             button.setText(wasteStreams.getDisplayNameFromValue(stream));
-            LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,BUTTON_HEIGHT_PIXELS,1f);
+            LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT,1f);
             lparams.setMargins(10,10,10,10);
             button.setLayoutParams(lparams);
             button.setBackgroundColor(wasteStreams.getButtonColorFromValue(stream));
@@ -441,19 +456,29 @@ public class MainActivity extends AppCompatActivity implements UsbScaleManager.C
 
         Button mTare;
         mTare = (Button) findViewById(R.id.button_zero);
-        mTare.setVisibility(mWeightRecorder.tareAfterAdd() ? View.VISIBLE : View.GONE);
-        mTare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "Call Zero Tare");
-                ScaleMeasurement sm = mUsbScaleManager.getLatestMeasurement();
-                if(sm != null) {
-                    mUsbScaleManager.setAddToScaleWeight(sm.getRawScaleWeight());
-                } else {
-                    Log.e(TAG, "Null ScaleMeasurement on Tare");
+        if (mWeightRecorder.tareAfterAdd()){
+            mTare.setBackgroundColor(Color.GRAY);
+            mTare.setText(R.string.btn_zero);
+            mTare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d(TAG, "Call Zero Tare");
+                    ScaleMeasurement sm = mUsbScaleManager.getLatestMeasurement();
+                    if(sm != null) {
+                        mUsbScaleManager.setAddToScaleWeight(sm.getRawScaleWeight());
+                    } else {
+                        Log.e(TAG, "Null ScaleMeasurement on Tare");
+                    }
                 }
-            }
-        });
+            });
+        } else {
+            // Make the button transparent so it still takes up the space, but not in use.
+            mTare.setBackgroundColor(Color.TRANSPARENT);
+            mTare.setText("");
+            mTare.setOnClickListener(null);
+        }
+
+
     }
 
     private void setTitleBar() {

@@ -49,6 +49,12 @@ public class WeightRecorder {
                 .apply();
     }
 
+    public void setUseBeacons(Boolean value){
+        mSharedPreferences.edit()
+                .putBoolean(PREF_USE_BEACONS, value)
+                .apply();
+    }
+
     private double getSavedDouble(String key, double defaultValue) {
         return Double.valueOf(mSharedPreferences.getString(key, Double.toString(defaultValue)));
     }

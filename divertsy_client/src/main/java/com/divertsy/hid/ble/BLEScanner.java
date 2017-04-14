@@ -33,6 +33,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
 /**
  *
  * This code will look for Eddystone URL beacons in order to pull in location data.
@@ -164,6 +166,7 @@ public class BLEScanner {
                     Log.d(TAG, "PERMISSION_REQUEST_COARSE_LOCATION granted");
                 }
             }
+
         }
     }
 
